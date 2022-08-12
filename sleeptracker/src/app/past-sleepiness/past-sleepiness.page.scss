@@ -1,0 +1,13 @@
+ion-toolbar.submit{
+	--padding-bottom:25px;
+	text-align:center;
+}
+
+@media (prefers-color-scheme: dark) { 
+
+      
+  ion-title{
+
+  --color: #877AC2;
+    }
+  }

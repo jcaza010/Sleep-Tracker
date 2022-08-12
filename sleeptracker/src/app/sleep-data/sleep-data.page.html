@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button (click)="back()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>sleepData</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    This is the sleep data page! guess the button worked
+  </ion-item>
+  
+<ion-button color="secondary" (click)="tempShowSleep()">look at sleep logged</ion-button>
+<ion-button color="tertiary" (click)="tempShowSleepiness()">look at sleepiness logged</ion-button>
+
+  <ion-item>
+    Sleepiness data
+  </ion-item>
+  {{ testSleepinessString }}
+  <ion-item>
+    Sleepiness data
+  </ion-item>
+  {{ testSleepString }}
+</ion-content>

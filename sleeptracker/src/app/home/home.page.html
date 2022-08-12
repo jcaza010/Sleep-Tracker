@@ -1,0 +1,78 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Sleep Tracker
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  
+    
+  
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Sleep Tracker</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  
+
+  
+  
+<ion-fab slot="fixed" *ngIf="displayoptions" id="optionsmenu">
+  <div>
+    
+<ion-button (click)="goToSleepLogger()" color="primary" expand="full">log sleep</ion-button>
+
+<br>
+<ion-button (click)="goToSleepinessLogger()" color="secondary" expand="full">log sleepiness</ion-button>
+<br>
+
+<ion-button fill="outline" (click)="toggle()">Cancel</ion-button>
+
+</div>
+
+</ion-fab>
+ 
+<ion-list>
+<!--<ion-button (click)="goToSleepData()" color="tertiary">check logged data</ion-button>-->
+<ion-item *ngFor="let data of allSleepData.reverse()">
+  <ion-label>
+  <p class="date ion-text-wrap">{{data.dateString()}}</p>
+  <h2 class="ion-text-wrap datasummary">{{data.summaryString()}}</h2>
+
+  <ion-button class="del" fill="clear" (click)="confirmDelete(data)"><span>delete</span></ion-button>
+
+  
+
+  <!--{{data.constructor.name}}-->
+  </ion-label>
+</ion-item>
+</ion-list>
+
+
+<div *ngIf="!dataPresent()" class="dummy">
+
+  <h2>Welcome!</h2>
+
+  <img src="assets/sleep-dark-01.png"><br>
+
+  Want to log your sleep patterns? Start by clicking the button on the bottom right corner!
+
+</div>
+
+</ion-content>
+<ion-toolbar>
+<ion-button *ngIf="dataPresent()" (click)="confirmClearAll()" slot="start" fill="clear" id="clear">clear all</ion-button>
+<ion-button *ngIf="!dataPresent()" color="primary" slot="start" fill="clear" disabled="true">clear all</ion-button>
+
+<ion-fab-button id="create" (click)="toggle()" color="secondary" slot="end">
+              <ion-icon name="create"></ion-icon>
+</ion-fab-button>
+
+</ion-toolbar>
+

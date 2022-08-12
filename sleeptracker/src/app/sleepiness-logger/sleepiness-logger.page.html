@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button (click)="back()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>sleepinessLogger</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    This is the sleepiness logger page! guess the button worked
+  </ion-item>
+
+<ion-button color="secondary" (click)="presentModal1()">log current sleepiness</ion-button>
+<ion-button color="tertiary" (click)="presentModal2()">log past sleepiness</ion-button>
+  
+</ion-content>

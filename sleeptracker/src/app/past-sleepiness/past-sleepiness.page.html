@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Past Sleepiness</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()" color="secondary">Cancel</ion-button>
+    </ion-buttons>  
+    <ion-buttons slot="end">
+      <ion-button (click)="logSleepiness()" color="secondary">Log</ion-button>
+    </ion-buttons> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-datetime placeholder="Select Date" [(ngModel)]="inputsDate"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>Sleepiness feeling at</ion-label>
+    <ion-datetime display-format="h:mm A" picker-format="h:mm A" value="1990-02-19T07:43Z" [(ngModel)]="inputsTime"></ion-datetime>
+  </ion-item>
+  How would you rate your sleepiness?
+  <ion-item >
+    <ion-range color="secondary" snaps="true" pin="true" min="1" max="7"  [(ngModel)]="currentValue" [value]="currentValue" (ionChange)="updateDesc()"></ion-range>
+  </ion-item>
+
+  <ion-item >
+    Rating: {{ currentValue }}, {{ desc }}
+  </ion-item>
+ <!--
+  
+<ion-button (click)="logSleepiness()" color="secondary" expand="full">
+    Log current sleepiness
+  </ion-button>
+  -->
+</ion-content>
+
